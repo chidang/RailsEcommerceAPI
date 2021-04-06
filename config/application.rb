@@ -9,7 +9,9 @@ Bundler.require(*Rails.groups)
 module ShopWebRailsApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.2
+    config.load_defaults 6.1
+
+    config.autoload_paths += Dir["#{config.root}/app/dtos/**/*"]
 
     # CORS settings
     config.middleware.insert_before 0, Rack::Cors do
