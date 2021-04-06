@@ -64,7 +64,7 @@ class ApplicationController < ActionController::API
 
   private
 
-  attr_reader :headers
+  # attr_reader :headers
 
   def get_token
     # JWT.decode(token, Rails.application.secret_key_base).first
