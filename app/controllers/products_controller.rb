@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
     @products = Product.order(created_at: :desc).offset(page_size * (page - 1)).limit(page_size)
     @products_count = Product.count
     @dto = ProductListDto.new(@products, @products_count, self.request.path, page, page_size)
+
     render :list
   end
 
