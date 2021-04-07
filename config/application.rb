@@ -21,6 +21,10 @@ module ShopWebRailsApp
       end
     end
 
+    Dir[Rails.root.join("config", "routes", "**", "*.rb")].each do |route_file|
+      config.paths["config/routes.rb"].unshift route_file
+    end
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
